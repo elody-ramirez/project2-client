@@ -20,11 +20,6 @@ const clearMessaging = function () {
   }, 5000)
 }
 
-const signUpSuccessful = responseData => {
-  successMessage('You signed up successfully! Now Sign In!')
-  clearMessaging()
-}
-
 const signUpFailure = () => {
   failureMessage('You failed to sign up! Try Again!')
   clearMessaging()
@@ -69,7 +64,6 @@ const signOutFailure = () => {
 }
 
 module.exports = {
-  signUpSuccessful,
   signUpFailure,
   signInSuccessful,
   signInFailure,

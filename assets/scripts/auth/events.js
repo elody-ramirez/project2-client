@@ -11,7 +11,9 @@ const onSignUp = event => {
   const formData = getFormFields(form)
   // $('#sign-up-modal').modal('toggle')
   api.signUp(formData)
-    .then(ui.signUpSuccessful)
+    .then(() => {
+      onSignIn(event)
+    })
     .catch(ui.signUpFailure)
 }
 
