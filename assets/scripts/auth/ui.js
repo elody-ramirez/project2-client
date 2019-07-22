@@ -1,6 +1,6 @@
 'use strict'
 
-// const store = require('../store')
+const store = require('../store')
 // const api = require('./api')
 
 const successMessage = message => {
@@ -15,10 +15,8 @@ const failureMessage = message => {
 
 const clearMessaging = function () {
   setTimeout(function () {
-    // $('#message').text('')
-    $('.message1').hide()
-    $('.messsage2').hide()
-  }, 3000)
+    $('#message').text('')
+  }, 5000)
 }
 
 const signUpSuccessful = responseData => {
@@ -31,7 +29,20 @@ const signUpFailure = () => {
   clearMessaging()
 }
 
+const signInSuccessful = responseData => {
+  successMessage('You logged into your account!')
+  store.user = responseData.user
+  clearMessaging()
+}
+
+const signInFailure = () => {
+  failureMessage("You weren't able to log in!")
+  clearMessaging()
+}
+
 module.exports = {
   signUpSuccessful,
-  signUpFailure
+  signUpFailure,
+  signInSuccessful,
+  signInFailure
 }
