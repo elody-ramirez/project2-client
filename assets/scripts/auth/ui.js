@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+// const signInTemplate = require('../templates/signed-in.handlebars')
 // const api = require('./api')
 
 const successMessage = message => {
@@ -31,6 +32,13 @@ const signUpFailure = () => {
 
 const signInSuccessful = responseData => {
   successMessage('You logged into your account!')
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  // const signInHtml = signInTemplate({ })
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  // $('.content').html(signInHtml)
   store.user = responseData.user
   clearMessaging()
 }
@@ -40,9 +48,21 @@ const signInFailure = () => {
   clearMessaging()
 }
 
+const changePasswordSuccessful = responseData => {
+  successMessage('You successfully changed your password!')
+  clearMessaging()
+}
+
+const changePasswordFailure = () => {
+  failureMessage('You were not able to change your password!')
+  clearMessaging()
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccessful,
-  signInFailure
+  signInFailure,
+  changePasswordSuccessful,
+  changePasswordFailure
 }

@@ -14,7 +14,6 @@
     <body>
       <h1>NBA Fantasy Team</h1>
 
-
       <h3 id="message"></h3>
 
       <form id="sign-up">
@@ -32,6 +31,16 @@
         class="form-control" placeholder="Enter Email Here" required>
         <input type="password" name=credentials[password]
         class="form-control" placeholder="Enter Password Here" required>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+
+      <div id="content" class="content"></div>
+
+      <form id="change-password">
+        <input type="password" name="passwords[old]"
+        class="form-control" placeholder="Old Password">
+        <input type="password" name="passwords[new]"
+        class="form-control" placeholder="New Password">
         <button class="btn btn-primary">Submit</button>
       </form>
 

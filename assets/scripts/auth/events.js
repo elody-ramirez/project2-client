@@ -26,9 +26,21 @@ const onSignIn = event => {
     .catch(ui.signInFailure)
 }
 
+const onChangePassword = event => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  // $('#change-pw-modal').modal('toggle')
+  api.changePassword(formData)
+    .then(ui.changePasswordSuccessful)
+    .catch(ui.changePasswordFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
 }
 
 module.exports = {
