@@ -58,11 +58,23 @@ const changePasswordFailure = () => {
   clearMessaging()
 }
 
+const signOutSuccessful = responseData => {
+  successMessage('You have successfully logged out!')
+  clearMessaging()
+}
+
+const signOutFailure = () => {
+  failureMessage('You were unable to log out')
+  clearMessaging()
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccessful,
   signInFailure,
   changePasswordSuccessful,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccessful,
+  signOutFailure
 }
