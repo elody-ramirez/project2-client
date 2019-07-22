@@ -1,11 +1,12 @@
 'use strict'
 
 // const store = require('../store')
+const showPlayersTemplate = require('../templates/players-listing.handlebars')
 
-const successMessage = message => {
-  $('#message').text(message)
-  $('form').trigger('reset')
-}
+// const successMessage = message => {
+//   $('#message').text(message)
+//   $('form').trigger('reset')
+// }
 
 const failureMessage = message => {
   $('#message').text(message)
@@ -19,8 +20,14 @@ const clearMessaging = function () {
 }
 
 const indexPlayersSuccessful = responseData => {
-  successMessage(`Success`)
-  clearMessaging()
+  console.log(responseData)
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const showPlayersHtml = showPlayersTemplate({ players: responseData.players })
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('.content').html(showPlayersHtml)
 }
 
 const indexPlayersFailure = responseData => {
