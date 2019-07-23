@@ -1,6 +1,6 @@
 'use strict'
 
-// const getFormFields = require('../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -26,9 +26,20 @@ const onGetPlayer = event => {
     .catch(ui.getPlayerFailure)
 }
 
+const onCreatePlayer = event => {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  api.createPlayer(formData)
+    .then(ui.createPlayerSuccessful)
+    .catch(ui.createPlayerFailure)
+}
+
 const addHandlers = () => {
   $('#index-players').on('click', onIndexPlayers)
   $('#get-players').on('click', onGetPlayer)
+  $('#create-player').on('submit', onCreatePlayer)
 }
 
 module.exports = {
