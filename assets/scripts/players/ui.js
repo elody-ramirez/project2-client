@@ -24,6 +24,8 @@ const indexPlayersSuccessful = responseData => {
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
   // 4. Will return an interpolated HTML string
+  console.log(responseData)
+  console.log(responseData.players)
   const showPlayersHtml = showPlayersTemplate({ players: responseData.players })
   // 5. Insert HTML string onto the page using jQuery
   // use .append or .html

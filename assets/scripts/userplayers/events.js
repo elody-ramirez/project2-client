@@ -1,14 +1,13 @@
 'use strict'
 
-// const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
-// const onIndexUserPlayers = event => {
-//   api.indexPlayers()
-//     .then(ui.indexPlayersSuccessful)
-//     .catch(ui.indexPlayersFailure)
-// }
+const onIndexUserPlayers = event => {
+  api.indexUserPlayers()
+    .then(ui.indexUserPlayersSuccessful)
+    .catch(ui.indexUserPlayersFailure)
+}
 
 const onAddUserPlayer = event => {
   const playerId = $(event.target).data('id')
@@ -18,7 +17,7 @@ const onAddUserPlayer = event => {
 }
 
 const addHandlers = () => {
-  // $('#index-userplayers').on('click', onIndexUserPlayers)
+  $('#index-userplayers').on('click', onIndexUserPlayers)
   $('body').on('click', '.add-Player', onAddUserPlayer)
 }
 
