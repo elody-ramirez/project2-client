@@ -8,8 +8,10 @@
 
 const authEvents = require('./auth/events.js')
 const playersEvents = require('./players/events.js')
+const userplayersEvents = require('./userplayers/events.js')
 
 $(() => {
   authEvents.addHandlers()
   playersEvents.addHandlers()
+  userplayersEvents.addHandlers()
 })

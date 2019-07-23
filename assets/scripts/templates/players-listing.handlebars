@@ -1,5 +1,4 @@
 {{#each players as |player|}}
-  {{log player}}
   <section data-id="{{player.id}}">
     <h6>Name:</h6>
     <h3>
@@ -13,7 +12,6 @@
         No rating provided.
       {{/if}}
     </p>
-    {{> partial player}}
   </section>
 
 {{/each}}

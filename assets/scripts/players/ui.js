@@ -2,6 +2,7 @@
 
 // const store = require('../store')
 const showPlayersTemplate = require('../templates/players-listing.handlebars')
+const getPlayerTemplate = require('../templates/get-player.handlebars')
 
 // const successMessage = message => {
 //   $('#message').text(message)
@@ -20,7 +21,6 @@ const clearMessaging = function () {
 }
 
 const indexPlayersSuccessful = responseData => {
-  console.log(responseData)
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
   // 4. Will return an interpolated HTML string
@@ -35,8 +35,25 @@ const indexPlayersFailure = responseData => {
   clearMessaging()
 }
 
+const getPlayerSuccessful = responseData => {
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const getPlayerHtml = getPlayerTemplate({ player: responseData.player })
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('.content').append(getPlayerHtml)
+}
+
+const getPlayerFailure = () => {
+  failureMessage('You were not able to open a pack')
+  clearMessaging()
+}
+
 module.exports = {
   indexPlayersSuccessful,
-  indexPlayersFailure
+  indexPlayersFailure,
+  getPlayerSuccessful,
+  getPlayerFailure
 
 }

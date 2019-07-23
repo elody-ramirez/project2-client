@@ -10,6 +10,14 @@ const indexPlayers = () => {
   })
 }
 
+const getPlayer = (id) => {
+  return $.ajax({
+    url: config.apiUrl + `/players/${id}`,
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  indexPlayers
+  indexPlayers,
+  getPlayer
 }
