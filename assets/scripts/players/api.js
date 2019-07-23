@@ -28,8 +28,20 @@ const createPlayer = (formData) => {
   })
 }
 
+// const updatePlayer = (formData) => {
+//   return $.ajax({
+//     url: config.apiUrl + `/players/` + id,
+//     method: 'PATCH',
+//     data: formData,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
   indexPlayers,
   getPlayer,
   createPlayer
+  // updatePlayer
 }

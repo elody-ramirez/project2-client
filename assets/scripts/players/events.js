@@ -36,10 +36,21 @@ const onCreatePlayer = event => {
     .catch(ui.createPlayerFailure)
 }
 
+const onUpdatePlayer = event => {
+  event.preventDefault()
+
+  // const form = event.target
+  // const formData = getFormFields(form)
+  // api.updatePlayer(formData)
+  //   .then(ui.createPlayerSuccessful)
+  //   .catch(ui.createPlayerFailure)
+}
+
 const addHandlers = () => {
   $('#index-players').on('click', onIndexPlayers)
   $('#get-players').on('click', onGetPlayer)
   $('#create-player').on('submit', onCreatePlayer)
+  $('#update-player').on('submit', onUpdatePlayer)
 }
 
 module.exports = {
