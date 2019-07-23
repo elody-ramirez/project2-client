@@ -16,9 +16,17 @@ const onAddUserPlayer = event => {
     .catch(ui.addUserPlayerFailure)
 }
 
+const onRemoveUserPlayer = event => {
+  const userPlayerId = $(event.target).closest('section').data('jointid')
+  api.removeUserPlayer(userPlayerId)
+    .then(ui.removeUserPlayerSuccessful)
+    .catch(ui.removeUserPlayerFailure)
+}
+
 const addHandlers = () => {
   $('#index-userplayers').on('click', onIndexUserPlayers)
   $('body').on('click', '.add-Player', onAddUserPlayer)
+  $('body').on('click', '.remove-Player', onRemoveUserPlayer)
 }
 
 module.exports = {

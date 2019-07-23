@@ -29,7 +29,18 @@ const addUserPlayer = (playerId) => {
   })
 }
 
+const removeUserPlayer = (userPlayerId) => {
+  return $.ajax({
+    url: config.apiUrl + '/userplayers/' + userPlayerId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addUserPlayer,
-  indexUserPlayers
+  indexUserPlayers,
+  removeUserPlayer
 }

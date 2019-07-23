@@ -1,5 +1,5 @@
 {{#each userplayers as |userplayer|}}
-  <section data-id="{{userplayer.player.id}}">
+  <section data-id="{{userplayer.player.id}}" data-jointid="{{userplayer.id}}">
     <h6>Name:</h6>
     <h3>
       {{limit userplayer.player.name 15}}
@@ -12,6 +12,7 @@
         No rating provided.
       {{/if}}
     </p>
+    {{> partial2 player}}
   </section>
 
 {{/each}}

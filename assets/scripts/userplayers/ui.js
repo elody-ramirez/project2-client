@@ -3,10 +3,10 @@
 // const store = require('../store')
 const showUserPlayersTemplate = require('../templates/userplayers-listing.handlebars')
 
-// const successMessage = message => {
-//   $('#message').text(message)
-//   $('form').trigger('reset')
-// }
+const successMessage = message => {
+  $('#message').text(message)
+  $('form').trigger('reset')
+}
 
 const failureMessage = message => {
   $('#message').text(message)
@@ -20,10 +20,9 @@ const clearMessaging = function () {
 }
 
 const addUserPlayerSuccessful = responseData => {
-  console.log('success')
-  console.log(responseData)
-  // successMessage('You logged into your account!')
-  // clearMessaging()
+  $('.content').empty()
+  successMessage('You added this player to your Team!')
+  clearMessaging()
 }
 
 const addUserPlayerFailure = () => {
@@ -32,8 +31,6 @@ const addUserPlayerFailure = () => {
 }
 
 const indexUserPlayersSuccessful = responseData => {
-  console.log(responseData)
-  console.log(responseData.userplayers)
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
   // 4. Will return an interpolated HTML string
@@ -49,9 +46,22 @@ const indexUserPlayersFailure = () => {
   clearMessaging()
 }
 
+const removeUserPlayerSuccessful = responseData => {
+  $('.content').empty()
+  successMessage('You removed this player from your team!')
+  clearMessaging()
+}
+
+const removeUserPlayerFailure = () => {
+  failureMessage("You can't add this player")
+  clearMessaging()
+}
+
 module.exports = {
   addUserPlayerSuccessful,
   addUserPlayerFailure,
   indexUserPlayersSuccessful,
-  indexUserPlayersFailure
+  indexUserPlayersFailure,
+  removeUserPlayerSuccessful,
+  removeUserPlayerFailure
 }
