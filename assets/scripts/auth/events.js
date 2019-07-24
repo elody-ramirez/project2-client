@@ -9,7 +9,7 @@ const onSignUp = event => {
 
   const form = event.target
   const formData = getFormFields(form)
-  // $('#sign-up-modal').modal('toggle')
+  $('#sign-up-modal').modal('toggle')
   api.signUp(formData)
     .then(() => {
       onSignIn(event)
@@ -22,7 +22,7 @@ const onSignIn = event => {
 
   const form = event.target
   const formData = getFormFields(form)
-  // $('#sign-in-modal').modal('toggle')
+  $('#sign-in-modal').modal('toggle')
   api.signIn(formData)
     .then(ui.signInSuccessful)
     .catch(ui.signInFailure)
@@ -33,7 +33,7 @@ const onChangePassword = event => {
 
   const form = event.target
   const formData = getFormFields(form)
-  // $('#change-pw-modal').modal('toggle')
+  $('#change-pw-modal').modal('toggle')
   api.changePassword(formData)
     .then(ui.changePasswordSuccessful)
     .catch(ui.changePasswordFailure)

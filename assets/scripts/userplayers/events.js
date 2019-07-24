@@ -3,6 +3,11 @@
 const api = require('./api')
 const ui = require('./ui')
 
+const onMyTeam = event => {
+  ui.myTeamSuccessful()
+  // ui.myPlayerFailure()
+}
+
 const onIndexUserPlayers = event => {
   api.indexUserPlayers()
     .then(ui.indexUserPlayersSuccessful)
@@ -24,6 +29,7 @@ const onRemoveUserPlayer = event => {
 }
 
 const addHandlers = () => {
+  $('body').on('click', '#myteam', onMyTeam)
   $('body').on('click', '#index-userplayers', onIndexUserPlayers)
   $('body').on('click', '.add-Player', onAddUserPlayer)
   $('body').on('click', '.remove-Player', onRemoveUserPlayer)

@@ -3,21 +3,20 @@
 const store = require('../store')
 const signInTemplate = require('../templates/sign-in.handlebars')
 const signOutTemplate = require('../templates/sign-out.handlebars')
-// const api = require('./api')
 
 const successMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const failureMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const clearMessaging = function () {
   setTimeout(function () {
-    $('#message').text('')
+    $('.message').text('')
   }, 5000)
 }
 
@@ -27,7 +26,6 @@ const signUpFailure = () => {
 }
 
 const signInSuccessful = responseData => {
-  successMessage('You logged into your account!')
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
   // 4. Will return an interpolated HTML string
@@ -42,6 +40,7 @@ const signInSuccessful = responseData => {
   } else {
     store.createdPlayerId = 0
   }
+  successMessage('You logged into your account!')
   clearMessaging()
 }
 

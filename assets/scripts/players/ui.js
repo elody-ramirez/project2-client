@@ -10,13 +10,13 @@ const getNBAPlayerTemplate = require('../templates/get-nbaplayer.handlebars')
 // }
 
 const failureMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const clearMessaging = function () {
   setTimeout(function () {
-    $('#message').text('')
+    $('.message').text('')
   }, 4000)
 }
 

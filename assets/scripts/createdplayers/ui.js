@@ -1,23 +1,39 @@
 'use strict'
 
 const store = require('../store')
-// const showPlayersTemplate = require('../templates/players-listing.handlebars')
+const myPlayerTemplate = require('../templates/myplayer.handlebars')
 const getCreatedPlayerTemplate = require('../templates/get-createdplayer.handlebars')
+const signInTemplate = require('../templates/sign-in.handlebars')
 
 const successMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const failureMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const clearMessaging = function () {
   setTimeout(function () {
-    $('#message').text('')
+    $('.message').text('')
   }, 4000)
+}
+
+const myPlayerSuccessful = responseData => {
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const myPlayerHtml = myPlayerTemplate()
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('main').html(myPlayerHtml)
+}
+
+const myPlayerFailure = responseData => {
+  failureMessage('This action was not successul')
+  clearMessaging()
 }
 
 const showCreatedPlayerSuccessful = responseData => {
@@ -70,7 +86,24 @@ const updateCreatedPlayerFailure = () => {
   clearMessaging()
 }
 
+const myPlayerBackSuccessful = responseData => {
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const signInHtml = signInTemplate()
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('main').html(signInHtml)
+}
+
+const myPlayerBackFailure = responseData => {
+  failureMessage('This action was not successul')
+  clearMessaging()
+}
+
 module.exports = {
+  myPlayerSuccessful,
+  myPlayerFailure,
   showCreatedPlayerSuccessful,
   showCreatedPlayerFailure,
   createPlayerSuccessful,
@@ -78,5 +111,7 @@ module.exports = {
   deleteCreatedPlayerSuccessful,
   deleteCreatedPlayerFailure,
   updateCreatedPlayerSuccessful,
-  updateCreatedPlayerFailure
+  updateCreatedPlayerFailure,
+  myPlayerBackSuccessful,
+  myPlayerBackFailure
 }

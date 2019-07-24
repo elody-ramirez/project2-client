@@ -1,22 +1,38 @@
 'use strict'
 
 // const store = require('../store')
+const myTeamTemplate = require('../templates/myteam.handlebars')
 const showUserPlayersTemplate = require('../templates/userplayers-listing.handlebars')
 
 const successMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const failureMessage = message => {
-  $('#message').text(message)
+  $('.message').text(message)
   $('form').trigger('reset')
 }
 
 const clearMessaging = function () {
   setTimeout(function () {
-    $('#message').text('')
+    $('.message').text('')
   }, 5000)
+}
+
+const myTeamSuccessful = responseData => {
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const myTeamHtml = myTeamTemplate()
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('main').html(myTeamHtml)
+}
+
+const myTeamFailure = responseData => {
+  failureMessage('This action was not successul')
+  clearMessaging()
 }
 
 const addUserPlayerSuccessful = responseData => {
@@ -58,6 +74,8 @@ const removeUserPlayerFailure = () => {
 }
 
 module.exports = {
+  myTeamSuccessful,
+  myTeamFailure,
   addUserPlayerSuccessful,
   addUserPlayerFailure,
   indexUserPlayersSuccessful,
