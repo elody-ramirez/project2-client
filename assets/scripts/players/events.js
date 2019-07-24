@@ -26,8 +26,8 @@ const onGetPlayer = event => {
 }
 
 const addHandlers = () => {
-  $('#index-players').on('click', onIndexPlayers)
-  $('#get-players').on('click', onGetPlayer)
+  $('body').on('click', '#index-players', onIndexPlayers)
+  $('body').on('click', '#get-players', onGetPlayer)
 }
 
 module.exports = {

@@ -24,7 +24,7 @@ const onRemoveUserPlayer = event => {
 }
 
 const addHandlers = () => {
-  $('#index-userplayers').on('click', onIndexUserPlayers)
+  $('body').on('click', '#index-userplayers', onIndexUserPlayers)
   $('body').on('click', '.add-Player', onAddUserPlayer)
   $('body').on('click', '.remove-Player', onRemoveUserPlayer)
 }

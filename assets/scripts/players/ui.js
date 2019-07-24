@@ -42,7 +42,7 @@ const getPlayerSuccessful = responseData => {
   const getNBAPlayerHtml = getNBAPlayerTemplate({ player: responseData.player })
   // 5. Insert HTML string onto the page using jQuery
   // use .append or .html
-  $('.content').html(getNBAPlayerHtml)
+  $('.content').append(getNBAPlayerHtml)
 }
 
 const getPlayerFailure = () => {

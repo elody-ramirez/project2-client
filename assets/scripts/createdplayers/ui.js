@@ -27,7 +27,7 @@ const showCreatedPlayerSuccessful = responseData => {
   const getCreatedPlayerHtml = getCreatedPlayerTemplate({ createdplayer: responseData.createdplayer })
   // 5. Insert HTML string onto the page using jQuery
   // use .append or .html
-  $('.content').append(getCreatedPlayerHtml)
+  $('.content').html(getCreatedPlayerHtml)
 }
 
 const showCreatedPlayerFailure = responseData => {

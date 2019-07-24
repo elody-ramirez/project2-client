@@ -40,10 +40,10 @@ const onDeletePlayer = event => {
 }
 
 const addHandlers = () => {
-  $('#show-createdplayer').on('click', onShowCreatedPlayer)
-  $('#create-player').on('submit', onCreatePlayer)
-  $('#update-player').on('submit', onUpdatePlayer)
-  $('#delete-player').on('click', onDeletePlayer)
+  $('body').on('click', '#show-createdplayer', onShowCreatedPlayer)
+  $('body').on('submit', '#create-player', onCreatePlayer)
+  $('body').on('submit', '#update-player', onUpdatePlayer)
+  $('body').on('click', '#delete-player', onDeletePlayer)
 }
 
 module.exports = {
