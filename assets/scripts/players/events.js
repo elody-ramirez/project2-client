@@ -11,15 +11,15 @@ const onIndexPlayers = event => {
 
 const onGetPlayer = event => {
   $('.content').empty()
-  let id = Math.floor((Math.random() * 150) + 1)
+  let id = Math.floor((Math.random() * 478) + 1)
   api.getPlayer(id)
     .then(ui.getPlayerSuccessful)
     .catch(ui.getPlayerFailure)
-  id = Math.floor((Math.random() * 150) + 1)
+  id = Math.floor((Math.random() * 478) + 1)
   api.getPlayer(id)
     .then(ui.getPlayerSuccessful)
     .catch(ui.getPlayerFailure)
-  id = Math.floor((Math.random() * 150) + 1)
+  id = Math.floor((Math.random() * 478) + 1)
   api.getPlayer(id)
     .then(ui.getPlayerSuccessful)
     .catch(ui.getPlayerFailure)
