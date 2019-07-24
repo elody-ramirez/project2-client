@@ -15,6 +15,7 @@ const onIndexUserPlayers = event => {
 }
 
 const onAddUserPlayer = event => {
+  console.log($(event.target).data())
   const playerId = $(event.target).data('id')
   api.addUserPlayer(playerId)
     .then(ui.addUserPlayerSuccessful)
