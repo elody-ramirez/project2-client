@@ -28,11 +28,17 @@ const onRemoveUserPlayer = event => {
     .catch(ui.removeUserPlayerFailure)
 }
 
+const onMyTeamBack = event => {
+  ui.myTeamBackSuccessful()
+  // ui.myPlayerFailure()
+}
+
 const addHandlers = () => {
   $('body').on('click', '#myteam', onMyTeam)
   $('body').on('click', '#index-userplayers', onIndexUserPlayers)
   $('body').on('click', '.add-Player', onAddUserPlayer)
   $('body').on('click', '.remove-Player', onRemoveUserPlayer)
+  $('body').on('click', '#myteam-back', onMyTeamBack)
 }
 
 module.exports = {

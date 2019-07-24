@@ -3,6 +3,7 @@
 // const store = require('../store')
 const myTeamTemplate = require('../templates/myteam.handlebars')
 const showUserPlayersTemplate = require('../templates/userplayers-listing.handlebars')
+const signInTemplate = require('../templates/sign-in.handlebars')
 
 const successMessage = message => {
   $('.message').text(message)
@@ -73,6 +74,21 @@ const removeUserPlayerFailure = () => {
   clearMessaging()
 }
 
+const myTeamBackSuccessful = responseData => {
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const signInHtml = signInTemplate()
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('main').html(signInHtml)
+}
+
+const myTeamBackFailure = responseData => {
+  failureMessage('This action was not successul')
+  clearMessaging()
+}
+
 module.exports = {
   myTeamSuccessful,
   myTeamFailure,
@@ -81,5 +97,7 @@ module.exports = {
   indexUserPlayersSuccessful,
   indexUserPlayersFailure,
   removeUserPlayerSuccessful,
-  removeUserPlayerFailure
+  removeUserPlayerFailure,
+  myTeamBackSuccessful,
+  myTeamBackFailure
 }
