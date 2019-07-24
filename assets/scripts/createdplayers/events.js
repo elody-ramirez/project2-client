@@ -34,8 +34,7 @@ const onUpdatePlayer = event => {
 }
 
 const onDeletePlayer = event => {
-  const createdPlayerId = store.user.createdplayers[0].id
-  api.deletePlayer(createdPlayerId)
+  api.deletePlayer(store.createdPlayerId)
     .then(ui.deleteCreatedPlayerSuccessful)
     .catch(ui.deleteCreatedPlayerFailure)
 }

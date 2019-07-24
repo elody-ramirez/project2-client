@@ -1,6 +1,6 @@
 'use strict'
 
-// const store = require('../store')
+const store = require('../store')
 const showPlayersTemplate = require('../templates/players-listing.handlebars')
 const getPlayerTemplate = require('../templates/get-player.handlebars')
 
@@ -22,7 +22,7 @@ const clearMessaging = function () {
 
 const showCreatedPlayerSuccessful = responseData => {
   console.log('success')
-  console.log('responseData')
+  console.log(responseData)
   // // 2. Use the template file as a function
   // // 3. Pass the template file an object as an argument
   // // 4. Will return an interpolated HTML string
@@ -38,14 +38,10 @@ const showCreatedPlayerFailure = responseData => {
 }
 
 const createPlayerSuccessful = responseData => {
-  console.log(responseData)
-  // // 2. Use the template file as a function
-  // // 3. Pass the template file an object as an argument
-  // // 4. Will return an interpolated HTML string
-  // const getPlayerHtml = getPlayerTemplate({ player: responseData.player })
-  // // 5. Insert HTML string onto the page using jQuery
-  // // use .append or .html
-  // $('.content').append(getPlayerHtml)
+  store.createdPlayerId = responseData.createdplayer.id
+  $('.content').empty()
+  successMessage('You created your own player!')
+  clearMessaging()
 }
 
 const createPlayerFailure = () => {
@@ -60,7 +56,7 @@ const deleteCreatedPlayerSuccessful = responseData => {
 }
 
 const deleteCreatedPlayerFailure = () => {
-  failureMessage("You can't add this player")
+  failureMessage("You don't have a created player to delete")
   clearMessaging()
 }
 
