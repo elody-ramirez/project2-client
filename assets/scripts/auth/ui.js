@@ -35,7 +35,12 @@ const signInSuccessful = responseData => {
   // use .append or .html
   // $('.content').html(signInHtml)
   store.user = responseData.user
-  store.createdPlayerId = store.user.createdplayers[0].id
+  const createdPlayer = store.user.createdplayers
+  if (createdPlayer.length !== 0) {
+    store.createdPlayerId = createdPlayer[0].id
+  } else {
+    store.createdPlayerId = 0
+  }
   clearMessaging()
 }
 

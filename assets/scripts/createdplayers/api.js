@@ -3,9 +3,9 @@
 const config = require('../config')
 const store = require('../store')
 
-const showCreatedPlayer = () => {
+const showCreatedPlayer = (id) => {
   return $.ajax({
-    url: config.apiUrl + '/createdplayers',
+    url: config.apiUrl + '/createdplayers/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

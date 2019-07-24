@@ -2,7 +2,7 @@
 
 // const store = require('../store')
 const showPlayersTemplate = require('../templates/players-listing.handlebars')
-const getPlayerTemplate = require('../templates/get-player.handlebars')
+const getNBAPlayerTemplate = require('../templates/get-nbaplayer.handlebars')
 
 // const successMessage = message => {
 //   $('#message').text(message)
@@ -39,10 +39,10 @@ const getPlayerSuccessful = responseData => {
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
   // 4. Will return an interpolated HTML string
-  const getPlayerHtml = getPlayerTemplate({ player: responseData.player })
+  const getNBAPlayerHtml = getNBAPlayerTemplate({ player: responseData.player })
   // 5. Insert HTML string onto the page using jQuery
   // use .append or .html
-  $('.content').append(getPlayerHtml)
+  $('.content').html(getNBAPlayerHtml)
 }
 
 const getPlayerFailure = () => {

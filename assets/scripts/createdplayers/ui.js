@@ -1,8 +1,8 @@
 'use strict'
 
 const store = require('../store')
-const showPlayersTemplate = require('../templates/players-listing.handlebars')
-const getPlayerTemplate = require('../templates/get-player.handlebars')
+// const showPlayersTemplate = require('../templates/players-listing.handlebars')
+const getCreatedPlayerTemplate = require('../templates/get-createdplayer.handlebars')
 
 const successMessage = message => {
   $('#message').text(message)
@@ -21,15 +21,13 @@ const clearMessaging = function () {
 }
 
 const showCreatedPlayerSuccessful = responseData => {
-  console.log('success')
-  console.log(responseData)
-  // // 2. Use the template file as a function
-  // // 3. Pass the template file an object as an argument
-  // // 4. Will return an interpolated HTML string
-  // const showPlayersHtml = showPlayersTemplate({ players: responseData.players })
-  // // 5. Insert HTML string onto the page using jQuery
-  // // use .append or .html
-  // $('.content').html(showPlayersHtml)
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const getCreatedPlayerHtml = getCreatedPlayerTemplate({ createdplayer: responseData.createdplayer })
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('.content').append(getCreatedPlayerHtml)
 }
 
 const showCreatedPlayerFailure = responseData => {
@@ -50,6 +48,7 @@ const createPlayerFailure = () => {
 }
 
 const deleteCreatedPlayerSuccessful = responseData => {
+  store.createdPlayerId = 0
   $('.content').empty()
   successMessage('You delete your created player!')
   clearMessaging()

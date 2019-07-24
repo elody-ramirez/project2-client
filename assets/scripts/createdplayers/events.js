@@ -6,7 +6,7 @@ const ui = require('./ui')
 const store = require('../store')
 
 const onShowCreatedPlayer = event => {
-  api.showCreatedPlayer()
+  api.showCreatedPlayer(store.createdPlayerId)
     .then(ui.showCreatedPlayerSuccessful)
     .catch(ui.showCreatedPlayerFailure)
 }
