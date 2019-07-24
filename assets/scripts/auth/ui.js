@@ -1,7 +1,8 @@
 'use strict'
 
 const store = require('../store')
-// const signInTemplate = require('../templates/signed-in.handlebars')
+const signInTemplate = require('../templates/sign-in.handlebars')
+const signOutTemplate = require('../templates/sign-out.handlebars')
 // const api = require('./api')
 
 const successMessage = message => {
@@ -30,10 +31,10 @@ const signInSuccessful = responseData => {
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
   // 4. Will return an interpolated HTML string
-  // const signInHtml = signInTemplate({ })
+  const signInHtml = signInTemplate()
   // 5. Insert HTML string onto the page using jQuery
   // use .append or .html
-  // $('.content').html(signInHtml)
+  $('main').html(signInHtml)
   store.user = responseData.user
   const createdPlayer = store.user.createdplayers
   if (createdPlayer.length !== 0) {
@@ -60,6 +61,13 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccessful = responseData => {
+  // 2. Use the template file as a function
+  // 3. Pass the template file an object as an argument
+  // 4. Will return an interpolated HTML string
+  const signOutHtml = signOutTemplate()
+  // 5. Insert HTML string onto the page using jQuery
+  // use .append or .html
+  $('main').html(signOutHtml)
   successMessage('You have successfully logged out!')
   clearMessaging()
 }

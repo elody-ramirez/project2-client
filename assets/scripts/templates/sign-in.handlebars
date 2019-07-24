@@ -1,0 +1,37 @@
+<form id="change-password">
+  <input type="password" name="passwords[old]"
+  class="form-control" placeholder="Old Password">
+  <input type="password" name="passwords[new]"
+  class="form-control" placeholder="New Password">
+  <button class="btn btn-primary">Submit</button>
+</form>
+
+<button class="btn btn-primary" id="sign-out">Sign Out</button>
+
+<form id="create-player">
+  <input type="text" name=createdplayer[name]
+  class="form-control" placeholder="Enter Player Full Name Here" required>
+  <input type="number" name=createdplayer[rating]
+  class="form-control" placeholder="Enter Player Rating Here" required>
+  <input type="text" name=createdplayer[position]
+  class="form-control" placeholder="Enter Player Position Here" required>
+  <input type="text" name=createdplayer[height]
+  class="form-control" placeholder="Enter Player Height Here" required>
+  <button class="btn btn-primary">Submit</button>
+</form>
+
+<form id="update-player">
+  <input type="number" name=createdplayer[rating]
+  class="form-control" placeholder="Update Player Rating Here" required>
+  <button class="btn btn-primary">Submit</button>
+</form>
+
+
+<button class="btn btn-primary" id="index-players">See All Players</button>
+<button class="btn btn-primary" id="get-players">Open Pack</button>
+<button class="btn btn-primary" id="index-userplayers">Look at My Team</button>
+
+<button class="btn btn-primary" id="show-createdplayer">See My Created Player</button>
+<button class="btn btn-primary" id="delete-player">Delete My Created Player</button>
+
+<div id="content" class="content"></div>
