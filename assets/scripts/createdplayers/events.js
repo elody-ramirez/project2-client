@@ -6,7 +6,7 @@ const ui = require('./ui')
 const store = require('../store')
 
 const onShowCreatedPlayer = event => {
-  api.showCreatedPlayer(store.createdPlayerId)
+  api.showCreatedPlayer()
     .then(ui.showCreatedPlayerSuccessful)
     .catch(ui.showCreatedPlayerFailure)
 }
@@ -23,14 +23,14 @@ const onCreatePlayer = event => {
 }
 
 const onUpdatePlayer = event => {
-  console.log('button')
   event.preventDefault()
 
-  // const form = event.target
-  // const formData = getFormFields(form)
-  // api.updatePlayer(formData)
-  //   .then(ui.createPlayerSuccessful)
-  //   .catch(ui.createPlayerFailure)
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.updatePlayer(formData)
+    .then(ui.updateCreatedPlayerSuccessful)
+    .catch(ui.updateCreatedPlayerFailure)
 }
 
 const onDeletePlayer = event => {

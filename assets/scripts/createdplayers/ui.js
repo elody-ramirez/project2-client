@@ -59,11 +59,24 @@ const deleteCreatedPlayerFailure = () => {
   clearMessaging()
 }
 
+const updateCreatedPlayerSuccessful = responseData => {
+  $('.content').empty()
+  successMessage('You updated your created player!')
+  clearMessaging()
+}
+
+const updateCreatedPlayerFailure = () => {
+  failureMessage("You don't have a created player to update")
+  clearMessaging()
+}
+
 module.exports = {
   showCreatedPlayerSuccessful,
   showCreatedPlayerFailure,
   createPlayerSuccessful,
   createPlayerFailure,
   deleteCreatedPlayerSuccessful,
-  deleteCreatedPlayerFailure
+  deleteCreatedPlayerFailure,
+  updateCreatedPlayerSuccessful,
+  updateCreatedPlayerFailure
 }

@@ -3,9 +3,9 @@
 const config = require('../config')
 const store = require('../store')
 
-const showCreatedPlayer = (id) => {
+const showCreatedPlayer = () => {
   return $.ajax({
-    url: config.apiUrl + '/createdplayers/' + id,
+    url: config.apiUrl + '/createdplayers/' + store.createdPlayerId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -24,16 +24,16 @@ const createPlayer = (formData) => {
   })
 }
 
-// const updatePlayer = (formData) => {
-//   return $.ajax({
-//     url: config.apiUrl + `/players/` + id,
-//     method: 'PATCH',
-//     data: formData,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const updatePlayer = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + `/createdplayers/` + store.createdPlayerId,
+    method: 'PATCH',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 const deletePlayer = (id) => {
   return $.ajax({
@@ -48,6 +48,6 @@ const deletePlayer = (id) => {
 module.exports = {
   showCreatedPlayer,
   createPlayer,
-  deletePlayer
-  // updatePlayer
+  deletePlayer,
+  updatePlayer
 }
