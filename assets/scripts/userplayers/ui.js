@@ -43,7 +43,8 @@ const addUserPlayerSuccessful = responseData => {
 }
 
 const addUserPlayerFailure = () => {
-  failureMessage("You can't add this player")
+  $('.content').empty()
+  failureMessage('You have 3 Players on your team already. You need to drop 1.')
   clearMessaging()
 }
 

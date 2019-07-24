@@ -31,11 +31,6 @@ const myPlayerSuccessful = responseData => {
   $('main').html(myPlayerHtml)
 }
 
-const myPlayerFailure = responseData => {
-  failureMessage('This action was not successul')
-  clearMessaging()
-}
-
 const showCreatedPlayerSuccessful = responseData => {
   // 2. Use the template file as a function
   // 3. Pass the template file an object as an argument
@@ -47,7 +42,7 @@ const showCreatedPlayerSuccessful = responseData => {
 }
 
 const showCreatedPlayerFailure = responseData => {
-  failureMessage('This action was not successul')
+  failureMessage('You Need To Create a Player')
   clearMessaging()
 }
 
@@ -103,7 +98,6 @@ const myPlayerBackFailure = responseData => {
 
 module.exports = {
   myPlayerSuccessful,
-  myPlayerFailure,
   showCreatedPlayerSuccessful,
   showCreatedPlayerFailure,
   createPlayerSuccessful,
