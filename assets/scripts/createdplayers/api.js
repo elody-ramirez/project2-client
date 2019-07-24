@@ -35,8 +35,19 @@ const createPlayer = (formData) => {
 //   })
 // }
 
+const deletePlayer = (id) => {
+  return $.ajax({
+    url: config.apiUrl + `/createdplayers/` + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   showCreatedPlayer,
-  createPlayer
+  createPlayer,
+  deletePlayer
   // updatePlayer
 }

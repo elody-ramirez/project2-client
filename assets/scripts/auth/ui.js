@@ -35,6 +35,9 @@ const signInSuccessful = responseData => {
   // use .append or .html
   // $('.content').html(signInHtml)
   store.user = responseData.user
+  console.log(store.user)
+  const createdPlayerId = store.user.createdplayers[0].id
+  console.log(createdPlayerId)
   clearMessaging()
 }
 
