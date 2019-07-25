@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basketball</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body class="container-fluid">
+
+    <main>
+      <div class="row justify-content-center">
+        <div class="col-md-6 align-self-center">
+          <h1>Fantasy NBA</h1>
+          <h5>Based off NBA 2k Ratings</h5>
+        </div>
+      </div>
+
+
+      <section class="landing">
+        <h3 class="message"></h3>
+
+        <form class="sign-in-form col-md-6 box">
+          <h5>Sign In</h5>
+          <div class="form-group">
+            <input type="email" name=credentials[email]
+            class="form-control" placeholder="Enter Email Here" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name=credentials[password]
+            class="form-control" placeholder="Enter Password Here" required>
+          </div>
+          <button class="btn btn-primary">Submit</button>
+          <p>Not a member? Sign Up Now</p>
+
+          <!-- Sign Up modal button -->
+          <button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
+          id="sign-up-modal-button" data-target="#sign-up-modal" >Sign Up</button>
+        </form>
+
+        <!-- Sign Up modal -->
+        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog"
+        aria-labelledby="signUpModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="sign-up-label">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up">
+                  <input type="email" name=credentials[email]
+                  class="form-control" placeholder="Enter Email Here" required>
+                  <input type="password" name=credentials[password]
+                  class="form-control" placeholder="Enter Password Here" required>
+                  <input type="password" name=credentials[password_confirmation]
+                  class="form-control" placeholder="Re-enter Password" required>
+                  <button class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
