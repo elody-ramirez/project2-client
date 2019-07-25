@@ -1,1 +1,40 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background: lighten(black, 70%);
+  font-family: 'B612 Mono', monospace;
+}
+
+.sign-in-form {
+  background-color: #B54213;
+  border-radius: 15px;
+  left: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.btn {
+  background: lighten(black, 10%);
+  border-color: black;
+  &:hover {
+    background: lighten(black, 70%);
+    border-color: black;
+  }
+}
+
+.main-menu,
+.myplayer-menu,
+.myteam-menu {
+  .btn {
+    border-color: #B54213;
+    border-radius: 15px;
+    border-width: medium;
+    &:hover {
+      background-color: #B54213;
+      border-color: black;
+    }
+  }
+}

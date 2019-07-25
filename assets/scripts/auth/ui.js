@@ -76,6 +76,10 @@ const signOutFailure = () => {
   clearMessaging()
 }
 
+const clearFormsSuccessful = () => {
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpFailure,
   signInSuccessful,
@@ -83,5 +87,6 @@ module.exports = {
   changePasswordSuccessful,
   changePasswordFailure,
   signOutSuccessful,
-  signOutFailure
+  signOutFailure,
+  clearFormsSuccessful
 }

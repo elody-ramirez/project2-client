@@ -39,8 +39,20 @@ const removeUserPlayer = (userPlayerId) => {
   })
 }
 
+const createdPlayerToPlayerDB = () => {
+  return $.ajax({
+    url: config.apiUrl + '/players',
+    method: 'POST',
+    data: store.player,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   addUserPlayer,
   indexUserPlayers,
-  removeUserPlayer
+  removeUserPlayer,
+  createdPlayerToPlayerDB
 }

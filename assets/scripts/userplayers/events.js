@@ -23,7 +23,7 @@ const onAddUserPlayer = event => {
 }
 
 const onRemoveUserPlayer = event => {
-  const userPlayerId = $(event.target).closest('section').data('jointid')
+  const userPlayerId = $(event.target).data('id')
   api.removeUserPlayer(userPlayerId)
     .then(ui.removeUserPlayerSuccessful)
     .catch(ui.removeUserPlayerFailure)
@@ -34,13 +34,28 @@ const onMyTeamBack = event => {
   // ui.myPlayerFailure()
 }
 
+const onAddCreatedPlayer = event => {
+  api.createdPlayerToPlayerDB()
+    .then(feedback)
+}
+
+const feedback = responseData => {
+  const playerId = responseData.player.id
+  api.addUserPlayer(playerId)
+    .then(ui.addUserPlayerSuccessful)
+    .catch(ui.addUserPlayerFailure)
+}
+
 const addHandlers = () => {
   $('body').on('click', '#myteam', onMyTeam)
   $('body').on('click', '#index-userplayers', onIndexUserPlayers)
   $('body').on('click', '.add-Player', onAddUserPlayer)
   $('body').on('click', '.remove-Player', onRemoveUserPlayer)
   $('body').on('click', '#myteam-back', onMyTeamBack)
+  $('body').on('click', '#add-createdplayer', onAddCreatedPlayer)
 }
+
+// heroku run rails db:migrate
 
 module.exports = {
   addHandlers

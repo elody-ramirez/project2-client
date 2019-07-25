@@ -1,8 +1,12 @@
 # NBA Fantasy Team Creator
 
 ## Technologies Used
-- Ruby on Rails
-- Sql
+- javascript
+- JQuery
+- html
+- css
+- bootstrap
+- sass
 
 ## Planning
 

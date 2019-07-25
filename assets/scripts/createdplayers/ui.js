@@ -39,6 +39,11 @@ const showCreatedPlayerSuccessful = responseData => {
   // 5. Insert HTML string onto the page using jQuery
   // use .append or .html
   $('.content').html(getCreatedPlayerHtml)
+  delete responseData.createdplayer.user
+  delete responseData.createdplayer.id
+  responseData.player = responseData.createdplayer
+  delete responseData.createdplayer
+  store.player = responseData
 }
 
 const showCreatedPlayerFailure = responseData => {

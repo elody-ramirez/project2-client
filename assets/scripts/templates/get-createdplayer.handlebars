@@ -1,8 +1,8 @@
 <section data-id="{{createdplayer.id}}">
   <h6>Name:</h6>
   <h3>
-    {{limit createdplayer.name 15}}
-  </h2>
+    {{createdplayer.name}}
+  </h3>
   <h6>Rating:</h6>
   <p>
     {{#if createdplayer.rating}}
@@ -11,5 +11,6 @@
       No rating provided.
     {{/if}}
   </p>
-  <!-- {{> partial player}} -->
+  <button id="add-createdplayer" data-id="{{id}}">
+    Add To My Team!</button>
 </section>

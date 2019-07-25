@@ -45,11 +45,17 @@ const onSignOut = event => {
     .catch(ui.signOutFailure)
 }
 
+const onClearForms = event => {
+  ui.clearFormsSuccessful()
+  // ui.myPlayerFailure()
+}
+
 const addHandlers = () => {
   $('body').on('submit', '#sign-up', onSignUp)
-  $('body').on('submit', '#sign-in', onSignIn)
+  $('body').on('submit', '.sign-in-form', onSignIn)
   $('body').on('submit', '#change-password', onChangePassword)
   $('body').on('click', '#sign-out', onSignOut)
+  $('body').on('click', '.close', onClearForms)
 }
 
 module.exports = {

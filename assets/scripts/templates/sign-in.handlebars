@@ -1,39 +1,48 @@
-<h3 class="message"></h3>
+<section class="column main-menu">
+  <h3 class="message"></h3>
 
-<!-- Change Password modal button-->
-<button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
-id="change-pw-modal-button" data-target="#change-pw-modal">
-Change Password</button>
+  <section class="row">
+    <button class="btn btn-primary" id="myplayer">myPlayer</button>
+  </section>
 
-<!-- Change Password modal -->
-<div class="modal fade" id="change-pw-modal" tabindex="-1" role="dialog"
-aria-labelledby="changePwModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="change-pw-label">Change Your Password</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="change-password">
-          <input type="password" name="passwords[old]"
-          class="form-control" placeholder="Old Password">
-          <input type="password" name="passwords[new]"
-          class="form-control" placeholder="New Password">
-          <button class="btn btn-primary">Submit</button>
-        </form>
+  <section class="row">
+    <button class="btn btn-primary" id="myteam">myTeam</button>
+  </section>
+
+  <section class="row">
+    <!-- Change Password modal button-->
+    <button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
+    id="change-pw-modal-button" data-target="#change-pw-modal">
+    Change Password</button>
+
+    <!-- Change Password modal -->
+    <div class="modal fade" id="change-pw-modal" tabindex="-1" role="dialog"
+    aria-labelledby="changePwModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="change-pw-label">Change Your Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <input type="password" name="passwords[old]"
+              class="form-control" placeholder="Old Password">
+              <input type="password" name="passwords[new]"
+              class="form-control" placeholder="New Password">
+              <button class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
+  <section class="row">
+    <button class="btn btn-primary" id="sign-out">Sign Out</button>
+  </section>
 
-
-<button class="btn btn-primary" id="sign-out">Sign Out</button>
-
-<button class="btn btn-primary" id="myplayer">myPlayer</button>
-<button class="btn btn-primary" id="myteam">myTeam</button>
-
-<div class="content" class="content"></div>
+  <div class="content" class="content"></div>
+</section>

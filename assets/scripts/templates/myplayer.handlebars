@@ -1,67 +1,69 @@
-<!-- Create Player modal button-->
-<button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
-id="create-player-modal-button" data-target="#create-player-modal">
-Create Your Own Player</button>
+<section class="column myplayer-menu">
+  <!-- Create Player modal button-->
+  <button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
+  id="create-player-modal-button" data-target="#create-player-modal">
+  Create Your Own Player</button>
 
-<!-- Create Player modal -->
-<div class="modal fade" id="create-player-modal" tabindex="-1" role="dialog"
-aria-labelledby="createPlayerModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="create-player-label">Create Player</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="create-player">
-          <input type="text" name=createdplayer[name]
-          class="form-control" placeholder="Enter Player Full Name Here" required>
-          <input type="number" name=createdplayer[rating]
-          class="form-control" placeholder="Enter Player Rating Here" required>
-          <input type="text" name=createdplayer[position]
-          class="form-control" placeholder="Enter Player Position Here" required>
-          <input type="text" name=createdplayer[height]
-          class="form-control" placeholder="Enter Player Height Here" required>
-          <button class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Update Player modal button-->
-<button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
-id="update-player-modal-button" data-target="#update-player-modal">
-Update Your Own Player</button>
-
-<!-- Update Player modal -->
-<div class="modal fade" id="update-player-modal" tabindex="-1" role="dialog"
-aria-labelledby="updatePlayerModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="update-player-label">Update Player</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="update-player">
-          <input type="number" name=createdplayer[rating]
-          class="form-control" placeholder="Update Player Rating Here" required>
-          <button class="btn btn-primary">Submit</button>
-        </form>
+  <!-- Create Player modal -->
+  <div class="modal fade" id="create-player-modal" tabindex="-1" role="dialog"
+  aria-labelledby="createPlayerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="create-player-label">Create Player</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="create-player">
+            <input type="text" name=createdplayer[name]
+            class="form-control" placeholder="Enter Player Full Name Here" required>
+            <input type="number" name=createdplayer[rating]
+            class="form-control" placeholder="Enter Player Rating Here" required>
+            <input type="text" name=createdplayer[position]
+            class="form-control" placeholder="Enter Player Position Here" required>
+            <input type="text" name=createdplayer[height]
+            class="form-control" placeholder="Enter Player Height Here" required>
+            <button class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<button class="btn btn-primary" id="show-createdplayer">See My Created Player</button>
-<button class="btn btn-primary" id="delete-player">Delete My Created Player</button>
-<button class="btn btn-primary" id="myplayer-back">Back</button>
+  <!-- Update Player modal button-->
+  <button type="button" class="btn btn-primary btn-xl" data-toggle="modal"
+  id="update-player-modal-button" data-target="#update-player-modal">
+  Update Your Own Player</button>
 
-<h3 class="message"></h3>
+  <!-- Update Player modal -->
+  <div class="modal fade" id="update-player-modal" tabindex="-1" role="dialog"
+  aria-labelledby="updatePlayerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="update-player-label">Update Player</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="update-player">
+            <input type="number" name=createdplayer[rating]
+            class="form-control" placeholder="Update Player Rating Here" required>
+            <button class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="content" class="content"></div>
+  <button class="btn btn-primary" id="show-createdplayer">See My Created Player</button>
+  <button class="btn btn-primary" id="delete-player">Delete My Created Player</button>
+  <button class="btn btn-primary" id="myplayer-back">Back</button>
+
+  <h3 class="message"></h3>
+
+  <div class="content"></div>
+</section>
