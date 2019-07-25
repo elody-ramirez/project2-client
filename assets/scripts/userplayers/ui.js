@@ -50,7 +50,6 @@ const addUserPlayerFailure = () => {
 
 const indexUserPlayersSuccessful = responseData => {
   if (responseData.userplayers.length !== 0) {
-    console.log(responseData)
     // 2. Use the template file as a function
     // 3. Pass the template file an object as an argument
     // 4. Will return an interpolated HTML string
