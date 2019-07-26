@@ -1,7 +1,8 @@
 # NBA Fantasy Team Creator
 
 ## Link to Back End Repo
-https://github.com/elody-ramirez/project2-back-end
+Deployed: https://arcane-savannah-92927.herokuapp.com/
+Repo: https://github.com/elody-ramirez/project2-back-end
 
 ## Technologies Used
 - javascript
@@ -50,4 +51,4 @@ As a User I want to be able to remove players from my team.
 As a User I want to be able to create my own custom player.
 As a User I want to be able to update my created player's rating.
 As a User I want to be able to delete my created player to make another.
-As a User I want to be able to add my created player to my team of 3. 
+As a User I want to be able to add my created player to my team of 3.
